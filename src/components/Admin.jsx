@@ -60,12 +60,12 @@ export default function Admin() {
       <button onClick={dashPatients} className='my-1 btn btn-block btn-primary'>
         مدیریت بیماران
       </button>
-      <button
+      {/* <button
         onClick={dashBlogSettings}
         className='my-1 btn btn-block btn-primary'
       >
         مدیریت بلاگ
-      </button>
+      </button> */}
       <button onClick={dashSettings} className='my-1 btn btn-block btn-primary'>
         تنظیمات سیستم
       </button>

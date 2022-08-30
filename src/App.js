@@ -1,12 +1,12 @@
+// import Navbar from './components/Navbar'
 import Header from './components/Header'
-import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
-import Default from './pages/Default'
 import SignIn from './pages/SignIn'
 import NotFound from './pages/NotFound'
-import Blog from './pages/Blog'
-import About from './pages/About'
+// import Default from './pages/Default'
+// import Blog from './pages/Blog'
+// import About from './pages/About'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -21,15 +21,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         <Header />
         <AnimatePresence>
           <div className='container mx-auto w-full min-h-screen'>
             <Routes>
-              <Route index element={<Default />} />
+              {/* <Route index element={<Default />} />
               <Route path='sign-in' element={<SignIn />} />
               <Route path='blog' element={<Blog />} />
-              <Route path='about' element={<About />} />
+              <Route path='about' element={<About />} /> */}
+              <Route path='sign-in' element={<SignIn />} />
+              <Route index element={<SignIn />} />
               <Route path='dashboard' element={<ProtectedRoute />}>
                 <Route index element={<Dashboard />} />
                 <Route path=':stage' element={<Dashboard />} />
