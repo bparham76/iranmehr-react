@@ -1,0 +1,8 @@
+div._mc div {
+  display: flex;
+  flex-direction: column;
+}
+
+.normal {
+  all: unset !important;
+}

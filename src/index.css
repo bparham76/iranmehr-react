@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-color-1: #192d45;
+  --theme-color-2: #163b88;
+  --theme-color-3: #748cdb;
+  --theme-color-4: #c1dff9;
+  --theme-color-5: #7990a3;
+}
+
+* {
+  font-family: shabnam;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
