@@ -3,6 +3,7 @@ import ChildPage from '../shared/ChildPage'
 import PageSection from '../shared/PageSection'
 import NewPatient from './NewPatient'
 import PatientsList from './PatientsList'
+import AnimalsManager from './AnimalsManager'
 import { useState, createContext } from 'react'
 
 export const PatientsContext = createContext()
@@ -36,6 +37,12 @@ export default function Patients() {
               افزودن بیمار جدید
             </h1>
             <NewPatient />
+          </PageSection>
+          <PageSection>
+            <h1 className='mx-5 my-2 text-2xl font-bold text-center md:text-right'>
+              افزودن نژاد و نوع حیوانات
+            </h1>
+            <AnimalsManager />
           </PageSection>
           <PageSection>
             <h1 className='mx-5 my-2 text-2xl font-bold text-center md:text-right'>

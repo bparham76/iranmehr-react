@@ -66,9 +66,9 @@ export default function Admin() {
       >
         مدیریت بلاگ
       </button> */}
-      <button onClick={dashSettings} className='my-1 btn btn-block btn-primary'>
+      {/* <button onClick={dashSettings} className='my-1 btn btn-block btn-primary'>
         تنظیمات سیستم
-      </button>
+      </button> */}
       <button
         onClick={logoutProcess}
         className='my-1 btn btn-block btn-primary'

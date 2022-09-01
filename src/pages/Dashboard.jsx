@@ -28,9 +28,9 @@ function Dashboard() {
     case 'visits-search':
       currentPage = <VisitsSearch />
       break
-    case 'settings':
-      currentPage = <Settings />
-      break
+    // case 'settings':
+    //   currentPage = <Settings />
+    //   break
     case 'blog-settings':
       currentPage = <BlogAdmin />
       break
