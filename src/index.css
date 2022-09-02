@@ -15,3 +15,14 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+div.alert-box{
+  transition: all 500ms ease;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 0;
+}
+
+div.alert-box.show{
+  height: 100vh;
+}

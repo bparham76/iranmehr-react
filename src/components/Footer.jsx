@@ -9,14 +9,14 @@ function Footer() {
           <IoChevronUpCircle />
         </button>
       </div>
-      <div className='w-full flex justify-center items-center p-10 my-5 flex-col'>
-        <h3>
+      <div className='w-full flex justify-center items-center p-10 my-5 flex-col gap-0'>
+        <h3 className='m-0 p-0'>
           کلیه حقوق این وبسایت برای کلینیک دامپزشکی ایران مهر محفوظ است. &copy;
           1401 - 2022
         </h3>
         <br />
-        <p style={{textDecoration: 'underline'}}>
-          <a href="https://wa.me/989117186757">طراحی و توسعه</a>
+        <p className='m-0 p-0 underline'>
+          <a href="https://wa.me/989117186757" target="_blank">طراحی و توسعه</a>
         </p>
       </div>
     </div>

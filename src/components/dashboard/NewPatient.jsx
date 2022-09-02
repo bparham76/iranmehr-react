@@ -118,6 +118,9 @@ export default function NewPatient() {
           race: -1,
           owner_id: -1,
         })
+        document.getElementById('gender').value=-1
+        document.getElementById('type').value=-1
+        document.getElementById('race').value=-1
       } else toast('مشکلی در ثبت بیمار جدید پیش آمد', { type: 'error' })
 
       setRefresh(false)
@@ -187,6 +190,7 @@ export default function NewPatient() {
           />
           <label>جنسیت</label>
           <select
+            id='gender'
             onChange={(e) =>
               _setPatientData({ ..._patientData, gender: e.target.value })
             }
@@ -198,6 +202,7 @@ export default function NewPatient() {
           </select>
           <label>نوع</label>
           <select
+            id='type'
             onChange={(e) => {
               _setPatientData({
                 ..._patientData,

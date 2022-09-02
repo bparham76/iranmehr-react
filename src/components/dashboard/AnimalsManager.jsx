@@ -29,13 +29,14 @@ export default function AnimalsManager (){
         if(isLoading) setNewAnimalRace()
         getAnimalRaces()
         setNewRace('')
+        setAnimalNameId(-1)
+        document.getElementById('animals-names').value=-1
         setIsLoading(false)
         setSendNewRace(false)
-        document.getElementById('animals-names').value=-1
     }, [sendNewRace])
 
     useEffect(()=>{
-        if(animalNameId < 0) return
+        if(animalNameId < 0) setAnimalRaces({})
         getAnimalRaces()
     }, [animalNameId])
 
@@ -72,7 +73,25 @@ export default function AnimalsManager (){
         })
         if(response.status < 400) setAnimalRaces(response.data)
     }
-    const setNewAnimalRace = async () => {}
+    const setNewAnimalRace = async () => {
+        // if(animalNameId < 0){
+        //     toast('نام حیوان برای درج نژاد جدید را انتخاب کنید', {type:'error'})
+        //     return false
+        // }
+        // else if(newRace.trim().length == 0){
+        //     toast('نام نژاد جدید حیوان را وارد کنید', {type:'error'})
+        //     return false
+        // }
+        const response = await axios.post(BASE_URL + 'races/add', {name:newRace, animal_id: animalNameId}, {headers:{
+            accept:'application/json',
+            authorization:'Bearer ' + token
+        }})
+        if(response.status < 400){ 
+            setAnimalRaces(response.data)
+            return true
+        }
+        return false
+    }
 
     return <MobileContainer>
         <PageSection border={false}>
@@ -113,6 +132,14 @@ export default function AnimalsManager (){
             <input type="text" placeholder="نام نوع حیوان" value={newRace} onChange={e=>setNewRace(e.target.value)}/>
             <input type="button" value="ثبت نژاد جدید" className="btn btn-ghost"
                 onClick={e=>{
+                    if(animalNameId < 0){
+                        toast('نام حیوان برای درج نژاد جدید را انتخاب کنید', {type:'error'})
+                        return
+                    }
+                    else if(newRace.trim().length == 0){
+                        toast('نام نژاد جدید حیوان را وارد کنید', {type:'error'})
+                        return
+                    }
                     setIsLoading(true)
                     setSendNewRace(true)
                 }}
