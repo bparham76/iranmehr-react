@@ -23,6 +23,8 @@ export default function Users() {
 						</h1>
 						<p className='mx-5 text-justify'>
 							موارد به رنگ قرمز برای ثبت کاربر جدید الزامی هستند.
+							<br />
+							برای تغییر در دسترسی کاربران با پشتیبانی تماس بگیرید.
 						</p>
 						<NewUser />
 					</PageSection>

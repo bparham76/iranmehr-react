@@ -67,7 +67,6 @@ export default function UsersList() {
 					<thead>
 						<tr className='grid grid-cols-7 p-3 border-black border-b-2'>
 							<th>ردیف</th>
-							<th>کنترل</th>
 							<th>نام</th>
 							<th>نام خانوادگی</th>
 							<th>نقش</th>
@@ -84,17 +83,6 @@ export default function UsersList() {
 									className='grid grid-cols-7 p-3'
 								>
 									<td>{index + 1}</td>
-									<td>
-										<button className='px-2 border border-transparent rounded-lg hover:border-black active:bg-black active:text-white'>
-											ویرایش
-										</button>
-										<button
-											onClick={e => deleteUser(user.id, index)}
-											className='px-2 border border-transparent rounded-lg hover:border-black active:bg-black active:text-white'
-										>
-											حذف
-										</button>
-									</td>
 									<td>{user.first_name}</td>
 									<td>{user.last_name}</td>
 									<td>{user.role == 0 ? 'مدیر' : 'کاربر'}</td>

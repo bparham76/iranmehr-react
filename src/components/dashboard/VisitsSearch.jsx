@@ -305,44 +305,46 @@ export default function VisitsSearch() {
 					</MobileContainer>
 				</PageSection>
 				<PageSection>
-					<div className='relative w-full overflow-x-scroll'>
-						{loading && <LoadingBackdrop />}
-						<table className='w-full'>
-							<thead className='border-b-2 border-black'>
-								<tr className='grid grid-cols-7 p-3'>
-									<th>ردیف</th>
-									<th>کنترل</th>
-									<th>نام صاحب</th>
-									<th>نام</th>
-									<th>جنسیت</th>
-									<th>سن</th>
-									<th>تاریخ رجوع</th>
-								</tr>
-							</thead>
-							<tbody className='text-center'>
-								{!loading &&
-									typeof searchResult != null &&
-									searchResult.length > 0 &&
-									searchResult.map((item, index) => (
-										<tr className='grid grid-cols-7 p-3'>
-											<td>{index + 1}</td>
-											<td>
-												<input
-													type='button'
-													className='btn btn-sm btn-ghost'
-													value='نمایش'
-													onClick={e => handleShowPatient(item)}
-												/>
-											</td>
-											<td>{item.owner}</td>
-											<td>{item.name}</td>
-											<td>{item.gender}</td>
-											<td>{item.age + 100}</td>
-											<td>{item.date}</td>
-										</tr>
-									))}
-							</tbody>
-						</table>
+					<div className='w-full overflow-x-scroll'>
+						<div className='relative w-[250vw] md:w-[150vw] lg:w-full'>
+							{loading && <LoadingBackdrop />}
+							<table className='w-full'>
+								<thead className='border-b-2 border-black'>
+									<tr className='grid grid-cols-7 p-3'>
+										<th>ردیف</th>
+										<th>کنترل</th>
+										<th>نام صاحب</th>
+										<th>نام</th>
+										<th>جنسیت</th>
+										<th>سن</th>
+										<th>تاریخ رجوع</th>
+									</tr>
+								</thead>
+								<tbody className='text-center'>
+									{!loading &&
+										typeof searchResult != null &&
+										searchResult.length > 0 &&
+										searchResult.map((item, index) => (
+											<tr className='grid grid-cols-7 p-3'>
+												<td>{index + 1}</td>
+												<td>
+													<input
+														type='button'
+														className='btn btn-sm btn-ghost'
+														value='نمایش'
+														onClick={e => handleShowPatient(item)}
+													/>
+												</td>
+												<td>{item.owner}</td>
+												<td>{item.name}</td>
+												<td>{item.gender}</td>
+												<td>{item.age}</td>
+												<td>{item.date}</td>
+											</tr>
+										))}
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</PageSection>
 			</div>
