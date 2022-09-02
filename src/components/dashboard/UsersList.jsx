@@ -62,7 +62,7 @@ export default function UsersList() {
 			className='overflow-x-scroll relative m-0'
 		>
 			{isLoading && <LoadingBackdrop />}
-			<div className='w-[250vw] md:w-[150vw] lg:w-full p-5'>
+			<div className='w-[200%] md:w-[150%] lg:w-full p-5'>
 				<table className='w-full'>
 					<thead>
 						<tr className='grid grid-cols-7 p-3 border-black border-b-2'>

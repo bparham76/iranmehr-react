@@ -58,15 +58,15 @@ export const ShowVisitInfo = ({ setShow, patient }) => {
 				<div className='p-4 text-right'>
 					<table className='w-full whitespace-normal'>
 						<tr>
-							<th className='py-5'>نشانه ها</th>
+							<th className='p-5'>نشانه ها</th>
 							<td>{patient.sympthoms}</td>
 						</tr>
 						<tr>
-							<th className='py-5'>تشخیص</th>
+							<th className='p-5'>تشخیص</th>
 							<td>{patient.diagnosis}</td>
 						</tr>
 						<tr>
-							<th className='py-5'>تجویز</th>
+							<th className='p-5'>تجویز</th>
 							<td>{patient.treatment}</td>
 						</tr>
 					</table>

@@ -306,7 +306,7 @@ export default function VisitsSearch() {
 				</PageSection>
 				<PageSection>
 					<div className='w-full overflow-x-scroll'>
-						<div className='relative w-[250vw] md:w-[150vw] lg:w-full'>
+						<div className='relative w-[200%] md:w-[150%] lg:w-full'>
 							{loading && <LoadingBackdrop />}
 							<table className='w-full'>
 								<thead className='border-b-2 border-black'>

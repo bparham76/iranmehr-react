@@ -36,7 +36,7 @@ export default function VisitsList() {
 		)
 	return (
 		<div className='overflow-x-scroll'>
-			<div className='w-[250vw] md:w-[150vw] lg:w-full p-4'>
+			<div className='w-[200%] md:w-[150%] lg:w-full p-4'>
 				<table className='w-full'>
 					<thead className='border-b-2 border-black'>
 						<tr className='grid grid-cols-6 p-3'>
