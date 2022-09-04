@@ -8,11 +8,17 @@ import ProtectedRoute from './components/shared/ProtectedRoute'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from './pages/Dashboard'
+import axios from 'axios'
 
-export const BASE_URL = 'https://app.eeservice.ir/api/'
+export const BASE_URL = 'https://app.eeservice.ir/public/api/'
 // export const BASE_URL = 'http://127.0.0.1:8000/api/'
 
 function App() {
+  axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+  axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
+  axios.defaults.headers.put['Access-Control-Allow-Origin'] = '*';
+  axios.defaults.headers.delete['Access-Control-Allow-Origin'] = '*';
+
   return (
     <>
       <BrowserRouter>
