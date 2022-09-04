@@ -110,12 +110,9 @@ export default function VisitsSearch() {
 				<select
 					className='w-[28%]'
 					defaultValue={-1}
-					onChange={e => {
+					onChange={e =>
 						setSearchByVisitDate({ ...searchByVisitDate, day: e.target.value })
-						setTimeout(() => {
-							fetchDataByDate()
-						}, 500)
-					}}
+					}
 				>
 					<option value={-1}>روز</option>
 					{days.map(d => (
@@ -169,6 +166,8 @@ export default function VisitsSearch() {
 				type='button'
 				value='جستجو'
 				className='btn btn-primary'
+				onClick={e => fetchDataByDate()}
+				// onClick={e => console.log(searchByVisitDate)}
 			/>
 		</PageAnimatable>
 	)
@@ -218,7 +217,13 @@ export default function VisitsSearch() {
 	}
 
 	const fetchDataByDate = async () => {
-		if (searchMethod != 3 || searchByVisitDate.trim().length == 0) return
+		if (
+			searchMethod != 3 ||
+			searchByVisitDate.year < 0 ||
+			searchByVisitDate.month < 0 ||
+			searchByVisitDate.day < 0
+		)
+			return
 		try {
 			setLoading(true)
 			const token = localStorage.getItem('token')
@@ -228,7 +233,7 @@ export default function VisitsSearch() {
 					searchByVisitDate.year +
 					'&month=' +
 					searchByVisitDate.month +
-					'&day =' +
+					'&day=' +
 					searchByVisitDate.day,
 				{
 					headers: {

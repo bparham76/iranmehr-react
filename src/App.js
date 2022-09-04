@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from './pages/Dashboard'
 import axios from 'axios'
 
-export const BASE_URL = 'https://app.eeservice.ir/public/api/'
-// export const BASE_URL = 'http://127.0.0.1:8000/api/'
+// export const BASE_URL = 'https://app.eeservice.ir/public/api/'
+export const BASE_URL = 'http://127.0.0.1:8000/api/'
 
 function App() {
   axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
