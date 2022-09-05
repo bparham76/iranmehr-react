@@ -15,6 +15,8 @@ export default function Admin() {
 	const dashSearchVisits = () => navigate('/dashboard/visits-search')
 	const dashSettings = () => navigate('/dashboard/settings')
 	const dashBlogSettings = () => navigate('/dashboard/blog-settings')
+	const isAdmin = localStorage.getItem('user_role') == 0 ? true : false
+	const currentUser = localStorage.getItem('user_full_name')
 
 	const logoutProcess = async () => {
 		try {
@@ -48,6 +50,9 @@ export default function Admin() {
 			<h1 className='text-center w-full font-bold text-3xl my-5'>
 				دسترسی سریع
 			</h1>
+			<p className='text-center w-full text-sm my-5'>
+				خوش آمدی {currentUser} عزیز!
+			</p>
 			<button
 				onClick={dashSearchVisits}
 				className='my-1 btn btn-block btn-primary'
@@ -66,12 +71,14 @@ export default function Admin() {
 			>
 				مدیریت بیماران
 			</button>
-			<button
-				onClick={dashUsers}
-				className='my-1 btn btn-block btn-primary'
-			>
-				مدیریت کاربران
-			</button>
+			{isAdmin && (
+				<button
+					onClick={dashUsers}
+					className='my-1 btn btn-block btn-primary'
+				>
+					مدیریت کاربران
+				</button>
+			)}
 			<button
 				onClick={logoutProcess}
 				className='my-1 btn btn-block btn-primary'
