@@ -43,7 +43,7 @@ export default function Admin() {
 	return (
 		<div
 			id='admin-panel'
-			className='w-full my-5 p-5 shadow-sky-300 shadow-xl rounded-xl'
+			className='w-full my-5 p-5 shadow-violet-300 shadow-xl rounded-xl'
 		>
 			<h1 className='text-center w-full font-bold text-3xl my-5'>
 				دسترسی سریع

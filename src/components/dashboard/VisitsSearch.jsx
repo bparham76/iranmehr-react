@@ -20,22 +20,7 @@ export default function VisitsSearch() {
 		month: 0,
 		year: 0,
 	})
-	const [searchResult, setSearchResult] = useState([
-		{
-			name: '',
-			owner: '',
-			gender: '',
-			age: '',
-			date: '',
-		},
-		{
-			name: '',
-			owner: '',
-			gender: '',
-			age: '',
-			date: '',
-		},
-	])
+	const [searchResult, setSearchResult] = useState([])
 	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
@@ -315,9 +300,10 @@ export default function VisitsSearch() {
 							{loading && <LoadingBackdrop />}
 							<table className='w-full'>
 								<thead className='border-b-2 border-black'>
-									<tr className='grid grid-cols-7 p-3'>
+									<tr className='grid grid-cols-8 p-3'>
 										<th>ردیف</th>
 										<th>کنترل</th>
+										<th>افزوده شده توسط</th>
 										<th>نام صاحب</th>
 										<th>نام</th>
 										<th>جنسیت</th>
@@ -330,7 +316,7 @@ export default function VisitsSearch() {
 										typeof searchResult != null &&
 										searchResult.length > 0 &&
 										searchResult.map((item, index) => (
-											<tr className='grid grid-cols-7 p-3'>
+											<tr className='grid grid-cols-8 p-3'>
 												<td>{index + 1}</td>
 												<td>
 													<input
@@ -340,6 +326,7 @@ export default function VisitsSearch() {
 														onClick={e => handleShowPatient(item)}
 													/>
 												</td>
+												<td>{item.added_by}</td>
 												<td>{item.owner}</td>
 												<td>{item.name}</td>
 												<td>{item.gender}</td>

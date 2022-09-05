@@ -30,6 +30,10 @@ export const ShowVisitInfo = ({ setShow, patient }) => {
 							<td>{patient.date}</td>
 						</tr>
 						<tr>
+							<th>افزوده شده توسط</th>
+							<td>{patient.added_by}</td>
+						</tr>
+						<tr>
 							<th>نام</th>
 							<td>{patient.name}</td>
 						</tr>

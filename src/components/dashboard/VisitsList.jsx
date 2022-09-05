@@ -39,13 +39,14 @@ export default function VisitsList() {
 			<div className='w-[200%] md:w-[150%] lg:w-full p-4'>
 				<table className='w-full'>
 					<thead className='border-b-2 border-black'>
-						<tr className='grid grid-cols-6 p-3'>
-							<th className='col-span-1'>ردیف</th>
-							<th className='col-span-1'>نام صاحب</th>
-							<th className='col-span-1'>نام</th>
-							<th className='col-span-1'>جنسیت</th>
-							<th className='col-span-1'>سن</th>
-							<th className='col-span-1'>تاریخ رجوع</th>
+						<tr className='grid grid-cols-7 p-3'>
+							<th>ردیف</th>
+							<th>افزوده شده توسط</th>
+							<th>نام صاحب</th>
+							<th>نام</th>
+							<th>جنسیت</th>
+							<th>سن</th>
+							<th>تاریخ رجوع</th>
 						</tr>
 					</thead>
 					<tbody className='text-center'>
@@ -54,16 +55,15 @@ export default function VisitsList() {
 							allVisitData.map((v, i) => (
 								<tr
 									key={i}
-									className='grid grid-cols-6 p-3'
+									className='grid grid-cols-7 p-3'
 								>
-									<td className='col-span-1'>{i + 1}</td>
-									<td className='col-span-1'>{v.owner_name}</td>
-									<td className='col-span-1'>{v.patient_name}</td>
-									<td className='col-span-1'>{v.patient_gender}</td>
-									<td className='col-span-1'>{v.patient_age}</td>
-									<td className='col-span-1'>
-										{v.year + '/' + v.month + '/' + v.day}
-									</td>
+									<td>{i + 1}</td>
+									<td>{v.added_by}</td>
+									<td>{v.owner_name}</td>
+									<td>{v.patient_name}</td>
+									<td>{v.patient_gender}</td>
+									<td>{v.patient_age}</td>
+									<td>{v.year + '/' + v.month + '/' + v.day}</td>
 								</tr>
 							))}
 					</tbody>

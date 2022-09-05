@@ -65,7 +65,7 @@ export default function UsersList() {
 			<div className='w-[200%] md:w-[150%] lg:w-full p-5'>
 				<table className='w-full'>
 					<thead>
-						<tr className='grid grid-cols-7 p-3 border-black border-b-2'>
+						<tr className='grid grid-cols-6 p-3 border-black border-b-2'>
 							<th>ردیف</th>
 							<th>نام</th>
 							<th>نام خانوادگی</th>
@@ -80,7 +80,7 @@ export default function UsersList() {
 							allUserData.map((user, index) => (
 								<tr
 									key={index}
-									className='grid grid-cols-7 p-3'
+									className='grid grid-cols-6 p-3'
 								>
 									<td>{index + 1}</td>
 									<td>{user.first_name}</td>
